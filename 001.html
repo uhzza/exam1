@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.onload = function () {
+        const coffee = document.querySelector("#coffee");
+        const coke = document.querySelector("#coke");
+        const water = document.querySelector("#water");
+        const oneThousand = document.querySelector("#one_thousand");
+        const fiveHundred = document.querySelector("#five_hundred");
+        const oneHundred = document.querySelector("#one_hundred");
+        const target = document.querySelector("#target");
+        target.innerHTML = parseInt(0);
+        if (target.innerHTML == 0) {
+          coffee.style.color = "red";
+          coke.style.color = "red";
+          water.style.color = "red";
+        }
+        //
+
+        //
+        oneThousand.onclick = function () {
+          target.innerHTML = parseInt(target.innerHTML) + parseInt(1000);
+          if (target.innerHTML >= 700) {
+            water.style.color = "blue";
+          } else if (target.innerHTML < 700) {
+            water.style.color = "red";
+          }
+          if (target.innerHTML >= 1000) {
+            coke.style.color = "blue";
+          } else if (target.innerHTML < 1000) {
+            coke.style.color = "red";
+          }
+          if (target.innerHTML >= 2000) {
+            coffee.style.color = "blue";
+          } else if (target.innerHTML < 2000) {
+            coffee.style.color = "red";
+          }
+        };
+        fiveHundred.onclick = function () {
+          target.innerHTML = parseInt(target.innerHTML) + parseInt(500);
+          if (target.innerHTML >= 700) {
+            water.style.color = "blue";
+          } else if (target.innerHTML < 700) {
+            water.style.color = "red";
+          }
+          if (target.innerHTML >= 1000) {
+            coke.style.color = "blue";
+          } else if (target.innerHTML < 1000) {
+            coke.style.color = "red";
+          }
+          if (target.innerHTML >= 2000) {
+            coffee.style.color = "blue";
+          } else if (target.innerHTML < 2000) {
+            coffee.style.color = "red";
+          }
+        };
+        oneHundred.onclick = function () {
+          target.innerHTML = parseInt(target.innerHTML) + parseInt(100);
+          if (target.innerHTML >= 700) {
+            water.style.color = "blue";
+          } else if (target.innerHTML < 700) {
+            water.style.color = "red";
+          }
+          if (target.innerHTML >= 1000) {
+            coke.style.color = "blue";
+          } else if (target.innerHTML < 1000) {
+            coke.style.color = "red";
+          }
+          if (target.innerHTML >= 2000) {
+            coffee.style.color = "blue";
+          } else if (target.innerHTML < 2000) {
+            coffee.style.color = "red";
+          }
+        };
+        coffee.onclick = function () {
+          if (target.innerHTML < 2000) {
+            alert(`잔액이 부족합니다`);
+          } else if (target.innerHTML >= 2000) {
+            target.innerHTML = parseInt(target.innerHTML) - parseInt(2000);
+          }
+          if (target.innerHTML >= 700) {
+            water.style.color = "blue";
+          } else if (target.innerHTML < 700) {
+            water.style.color = "red";
+          }
+          if (target.innerHTML >= 1000) {
+            coke.style.color = "blue";
+          } else if (target.innerHTML < 1000) {
+            coke.style.color = "red";
+          }
+          if (target.innerHTML >= 2000) {
+            coffee.style.color = "blue";
+          } else if (target.innerHTML < 2000) {
+            coffee.style.color = "red";
+          }
+        };
+        coke.onclick = function () {
+          if (target.innerHTML < 1000) {
+            alert(`잔액이 부족합니다`);
+          } else if (target.innerHTML >= 1000) {
+            target.innerHTML = parseInt(target.innerHTML) - parseInt(1000);
+          }
+          if (target.innerHTML >= 700) {
+            water.style.color = "blue";
+          } else if (target.innerHTML < 700) {
+            water.style.color = "red";
+          }
+          if (target.innerHTML >= 1000) {
+            coke.style.color = "blue";
+          } else if (target.innerHTML < 1000) {
+            coke.style.color = "red";
+          }
+          if (target.innerHTML >= 2000) {
+            coffee.style.color = "blue";
+          } else if (target.innerHTML < 2000) {
+            coffee.style.color = "red";
+          }
+        };
+        water.onclick = function () {
+          if (target.innerHTML < 700) {
+            alert(`잔액이 부족합니다`);
+          } else if (target.innerHTML >= 700) {
+            target.innerHTML = parseInt(target.innerHTML) - parseInt(700);
+          }
+          if (target.innerHTML >= 700) {
+            water.style.color = "blue";
+          } else if (target.innerHTML < 700) {
+            water.style.color = "red";
+          }
+          if (target.innerHTML >= 1000) {
+            coke.style.color = "blue";
+          } else if (target.innerHTML < 1000) {
+            coke.style.color = "red";
+          }
+          if (target.innerHTML >= 2000) {
+            coffee.style.color = "blue";
+          } else if (target.innerHTML < 2000) {
+            coffee.style.color = "red";
+          }
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <h1>자판기</h1>
+    <h2>구매하기</h2>
+    <button id="coffee">커피 (2,000원)</button>
+    <button id="coke">콜라 (1,000원)</button>
+    <button id="water">물 (700원)</button>
+    <h2>금액 투입</h2>
+    <button id="one_thousand">1,000원 넣기</button>
+    <button id="five_hundred">500원 넣기</button>
+    <button id="one_hundred">100원 넣기</button>
+    <div>
+      현재 투입 금액 :
+      <span id="target"></span>
+      원
+    </div>
+  </body>
+</html>
